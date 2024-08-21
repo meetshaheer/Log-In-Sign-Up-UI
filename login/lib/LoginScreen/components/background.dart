@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 class background extends StatelessWidget {
   const background({
     super.key,
+    required this.child,
   });
+
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +34,7 @@ class background extends StatelessWidget {
               width: size.width * 0.6,
             ),
           ),
+          child
         ],
       ),
     );
