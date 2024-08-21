@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login/LoginScreen/components/background.dart';
 import 'package:login/LoginScreen/components/textfield.dart';
+import 'package:login/LoginScreen/welcom.dart';
 
 class body extends StatefulWidget {
   const body({
@@ -29,9 +30,10 @@ class _bodyState extends State<body> {
         child: SafeArea(
       child: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const SizedBox(),
+            const SizedBox(
+              height: 50,
+            ),
             const Text(
               "Hello",
               style: TextStyle(
@@ -39,20 +41,21 @@ class _bodyState extends State<body> {
                 fontSize: 70,
               ),
             ),
-            Text(
+            const Text(
               "Sign in to your account",
               style: TextStyle(fontSize: 20),
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
-            textfield(hinttext: "Username", prefix_icon: Icon(Icons.person)),
-            SizedBox(
+            const textfield(
+                hinttext: "Username", prefix_icon: Icon(Icons.person)),
+            const SizedBox(
               height: 30,
             ),
             textfield(
               hinttext: "Password",
-              prefix_icon: Icon(Icons.lock),
+              prefix_icon: const Icon(Icons.lock),
               is_secure: !issecure,
               postfix_icon: IconButton(
                 onPressed: () {
@@ -60,22 +63,42 @@ class _bodyState extends State<body> {
                     issecure = !issecure;
                   });
                 },
-                icon: Icon(
+                icon: const Icon(
                   Icons.remove_red_eye,
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             SizedBox(
               height: size.height * 0.06,
               width: size.width * 0.8,
               child: ElevatedButton(
+                style: const ButtonStyle(
+                    backgroundColor: MaterialStatePropertyAll(
+                        Color.fromARGB(255, 217, 0, 255))),
                 onPressed: () {
-                  setState(() {});
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => welcom()));
                 },
-                child: Text("LogIn"),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "LogIn",
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Icon(
+                      Icons.arrow_right_alt,
+                      color: Colors.white,
+                      size: 30,
+                    )
+                  ],
+                ),
               ),
             )
           ],
