@@ -164,18 +164,64 @@ class _bodyState extends State<body> {
                 ),
               ),
             ),
-            SizedBox(
-              height: 10,
+            const SizedBox(
+              height: 20,
+            ),
+            const customtext(
+              text: "Or Login with Social Accounts",
+              textColor: Colors.black,
+              textSize: 15,
+              textBoldness: FontWeight.w300,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                
                 customIconButon(
                     onpressed: () {},
                     icon: Icons.facebook,
                     iconColor: Colors.blueAccent,
-                    iconSize: 50)
+                    iconSize: 40),
+                customIconButon(
+                    onpressed: () {},
+                    icon: Icons.snapchat_rounded,
+                    iconColor: const Color.fromARGB(255, 255, 230, 0),
+                    iconSize: 40),
+                customIconButon(
+                    onpressed: () {},
+                    icon: Icons.shop_two,
+                    iconColor: const Color.fromARGB(255, 220, 22, 7),
+                    iconSize: 40)
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const customtext(
+                  text: "No Account? Tension Not! Click ",
+                  textColor: Colors.black,
+                  textSize: 15,
+                  textBoldness: FontWeight.w300,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => welcom()));
+                  },
+                  child: const customtext(
+                    text: "SignUp ",
+                    textColor: Colors.black,
+                    textBoldness: FontWeight.bold,
+                  ),
+                ),
+                const customtext(
+                  text: "here",
+                  textColor: Colors.black,
+                  textSize: 15,
+                  textBoldness: FontWeight.w300,
+                )
               ],
             )
           ],
