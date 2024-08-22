@@ -30,9 +30,6 @@ class _bodyState extends State<body> {
 
     void validation() {
       setState(() {
-        print(usernameController.text);
-        print(passwordController.text);
-
         if (usernameController.text.isEmpty &&
             passwordController.text.isEmpty) {
           showDialog(
