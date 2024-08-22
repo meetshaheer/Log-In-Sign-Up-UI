@@ -110,7 +110,7 @@ class _signupbodyState extends State<signupbody> {
               height: 20,
             ),
             textfield(
-                controllerName: usernameController,
+                controllerName: nameController,
                 hinttext: "Your Name",
                 prefix_icon: Icon(Icons.person)),
             const SizedBox(
@@ -124,7 +124,7 @@ class _signupbodyState extends State<signupbody> {
               height: 30,
             ),
             textfield(
-                controllerName: usernameController,
+                controllerName: phoneController,
                 hinttext: "Your Phone Number",
                 prefix_icon: Icon(Icons.person)),
             const SizedBox(
@@ -150,7 +150,7 @@ class _signupbodyState extends State<signupbody> {
               height: 30,
             ),
             textfield(
-              controllerName: passwordController,
+              controllerName: repeatpasController,
               hinttext: "Repeate Password",
               prefix_icon: const Icon(Icons.lock),
               is_secure: !issecure,
