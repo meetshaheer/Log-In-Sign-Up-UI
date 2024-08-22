@@ -162,6 +162,22 @@ class _bodyState extends State<body> {
                   ],
                 ),
               ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.facebook,
+                      color: Colors.blueAccent,
+                      size: 50,
+                    )),
+                    
+              ],
             )
           ],
         ),
