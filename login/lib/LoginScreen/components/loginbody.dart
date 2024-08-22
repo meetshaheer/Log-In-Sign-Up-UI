@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:login/LoginScreen/components/background.dart';
+import 'package:login/LoginScreen/components/signupbody.dart';
 import 'package:login/LoginScreen/components/textfield.dart';
 import 'package:login/LoginScreen/components/widgets/customIconButton.dart';
 import 'package:login/LoginScreen/components/widgets/customText.dart';
+import 'package:login/LoginScreen/signup.dart';
 import 'package:login/LoginScreen/welcom.dart';
 
-class body extends StatefulWidget {
-  const body({
+class loginbody extends StatefulWidget {
+  const loginbody({
     super.key,
   });
 
   @override
-  State<body> createState() => _bodyState();
+  State<loginbody> createState() => _loginbodyState();
 }
 
-class _bodyState extends State<body> {
+class _loginbodyState extends State<loginbody> {
   bool issecure = true;
   void initState() {
     issecure = false;
@@ -208,7 +210,7 @@ class _bodyState extends State<body> {
                 GestureDetector(
                   onTap: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => welcom()));
+                        MaterialPageRoute(builder: (context) => signup()));
                   },
                   child: const customtext(
                     text: "SignUp ",
