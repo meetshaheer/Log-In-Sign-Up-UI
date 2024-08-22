@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login/LoginScreen/components/widgets/customButton.dart';
 import 'package:login/LoginScreen/components/widgets/customText.dart';
-import 'package:login/LoginScreen/login.dart';
 
 class welcom extends StatelessWidget {
   const welcom({super.key});
