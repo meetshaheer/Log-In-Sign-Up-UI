@@ -96,7 +96,11 @@ class _bodyState extends State<body> {
             //   "Sign in to your account",
             //   style: TextStyle(fontSize: 20),
             // ),
-            
+            const customtext(
+              text: "SignIn to your account",
+              textColor: Colors.black,
+              textSize: 20,
+            ),
             const SizedBox(
               height: 50,
             ),
@@ -141,9 +145,14 @@ class _bodyState extends State<body> {
                 child: const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      "LogIn",
-                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    // Text(
+                    //   "LogIn",
+                    //   style: TextStyle(color: Colors.white, fontSize: 20),
+                    // ),
+                    customtext(
+                      text: "LogIn",
+                      textColor: Colors.white,
+                      textSize: 20,
                     ),
                     SizedBox(
                       width: 5,
