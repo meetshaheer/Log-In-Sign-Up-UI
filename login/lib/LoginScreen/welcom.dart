@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:login/LoginScreen/components/customButton.dart';
+import 'package:login/LoginScreen/components/widgets/customButton.dart';
+import 'package:login/LoginScreen/components/widgets/customText.dart';
 import 'package:login/LoginScreen/login.dart';
 
 class welcom extends StatelessWidget {
@@ -19,9 +20,14 @@ class welcom extends StatelessWidget {
             ],
           )),
         ),
-        title: const Text(
-          "Dashboard Screen",
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+        // title: const Text(
+        //   "Dashboard Screen",
+        //   style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+        // ),
+        title: const customtext(
+          text: "Dashboard Screen",
+          textColor: Colors.white,
+          textBoldness: FontWeight.bold,
         ),
       ),
       body: Container(

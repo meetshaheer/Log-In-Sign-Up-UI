@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login/LoginScreen/components/background.dart';
 import 'package:login/LoginScreen/components/textfield.dart';
+import 'package:login/LoginScreen/components/widgets/customText.dart';
 import 'package:login/LoginScreen/welcom.dart';
 
 class body extends StatefulWidget {
@@ -78,17 +79,24 @@ class _bodyState extends State<body> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const Text(
-              "Hello",
-              style: TextStyle(
-                fontWeight: FontWeight.w500,
-                fontSize: 70,
-              ),
+            // const Text(
+            //   "Hello",
+            //   style: TextStyle(
+            //     fontWeight: FontWeight.w500,
+            //     fontSize: 70,
+            //   ),
+            // ),
+            const customtext(
+              text: "Hello",
+              textColor: Colors.black,
+              textBoldness: FontWeight.w500,
+              textSize: 70,
             ),
-            const Text(
-              "Sign in to your account",
-              style: TextStyle(fontSize: 20),
-            ),
+            // const Text(
+            //   "Sign in to your account",
+            //   style: TextStyle(fontSize: 20),
+            // ),
+            
             const SizedBox(
               height: 50,
             ),
