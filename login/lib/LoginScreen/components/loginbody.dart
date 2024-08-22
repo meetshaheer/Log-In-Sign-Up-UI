@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:login/LoginScreen/components/background.dart';
-import 'package:login/LoginScreen/components/signupbody.dart';
 import 'package:login/LoginScreen/components/textfield.dart';
 import 'package:login/LoginScreen/components/widgets/customIconButton.dart';
 import 'package:login/LoginScreen/components/widgets/customText.dart';
@@ -25,11 +24,11 @@ class _loginbodyState extends State<loginbody> {
     super.initState();
   }
 
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    TextEditingController usernameController = TextEditingController();
-    TextEditingController passwordController = TextEditingController();
 
     void validation() {
       setState(() {
@@ -138,9 +137,7 @@ class _loginbodyState extends State<loginbody> {
                     backgroundColor: MaterialStatePropertyAll(
                         Color.fromARGB(255, 217, 0, 255))),
                 onPressed: () {
-                  setState(() {
-                    validation();
-                  });
+                  validation();
                 },
                 child: const Row(
                   mainAxisAlignment: MainAxisAlignment.center,

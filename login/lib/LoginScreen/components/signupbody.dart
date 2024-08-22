@@ -24,14 +24,14 @@ class _signupbodyState extends State<signupbody> {
     super.initState();
   }
 
+  TextEditingController nameController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController repeatpasController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    TextEditingController nameController = TextEditingController();
-    TextEditingController phoneController = TextEditingController();
-    TextEditingController usernameController = TextEditingController();
-    TextEditingController passwordController = TextEditingController();
-    TextEditingController repeatpasController = TextEditingController();
 
     void validation() {
       setState(() {
