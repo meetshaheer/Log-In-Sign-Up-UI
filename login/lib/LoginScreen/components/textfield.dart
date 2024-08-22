@@ -7,11 +7,13 @@ class textfield extends StatelessWidget {
     required this.prefix_icon,
     this.postfix_icon,
     this.is_secure,
+    this.controllerName,
   });
   final String hinttext;
   final Icon prefix_icon;
   final IconButton? postfix_icon;
   final bool? is_secure;
+  final TextEditingController? controllerName;
 
   void valuechange() {}
 
@@ -19,6 +21,7 @@ class textfield extends StatelessWidget {
   Widget build(BuildContext context) {
     return textFieldContainer(
       child: TextField(
+        controller: controllerName,
         obscureText: is_secure ?? false,
         cursorWidth: 1,
         style: const TextStyle(

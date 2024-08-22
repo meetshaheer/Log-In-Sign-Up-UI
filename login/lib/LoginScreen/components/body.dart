@@ -22,18 +22,62 @@ class _bodyState extends State<body> {
   }
 
   @override
-  @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    TextEditingController usernameController = TextEditingController();
+    TextEditingController passwordController = TextEditingController();
+
+    void validation() {
+      setState(() {
+        print(usernameController.text);
+        print(passwordController.text);
+
+        if (usernameController.text.isEmpty &&
+            passwordController.text.isEmpty) {
+          showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  title: const Text(
+                    "Oops...",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  content: const Text("Please Enter Username & Password"),
+                  actions: [
+                    SizedBox(
+                      height: 40,
+                      width: 150,
+                      child: ElevatedButton(
+                        style: const ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(
+                            Color.fromARGB(255, 217, 0, 255),
+                          ),
+                        ),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: const Text(
+                          "Back to LogIn",
+                          style: TextStyle(color: Colors.white, fontSize: 15),
+                        ),
+                      ),
+                    )
+                  ],
+                );
+              });
+        } else {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => const welcom()));
+        }
+      });
+    }
 
     return background(
         child: SafeArea(
       child: SingleChildScrollView(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const SizedBox(
-              height: 50,
-            ),
             const Text(
               "Hello",
               style: TextStyle(
@@ -48,12 +92,15 @@ class _bodyState extends State<body> {
             const SizedBox(
               height: 50,
             ),
-            const textfield(
-                hinttext: "Username", prefix_icon: Icon(Icons.person)),
+            textfield(
+                controllerName: usernameController,
+                hinttext: "Username",
+                prefix_icon: Icon(Icons.person)),
             const SizedBox(
               height: 30,
             ),
             textfield(
+              controllerName: passwordController,
               hinttext: "Password",
               prefix_icon: const Icon(Icons.lock),
               is_secure: !issecure,
@@ -79,8 +126,9 @@ class _bodyState extends State<body> {
                     backgroundColor: MaterialStatePropertyAll(
                         Color.fromARGB(255, 217, 0, 255))),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => welcom()));
+                  setState(() {
+                    validation();
+                  });
                 },
                 child: const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
