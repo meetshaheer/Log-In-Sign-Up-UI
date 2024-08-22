@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login/LoginScreen/components/background.dart';
 import 'package:login/LoginScreen/components/textfield.dart';
+import 'package:login/LoginScreen/components/widgets/customIconButton.dart';
 import 'package:login/LoginScreen/components/widgets/customText.dart';
 import 'package:login/LoginScreen/welcom.dart';
 
@@ -169,14 +170,12 @@ class _bodyState extends State<body> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.facebook,
-                      color: Colors.blueAccent,
-                      size: 50,
-                    )),
-                    
+                
+                customIconButon(
+                    onpressed: () {},
+                    icon: Icons.facebook,
+                    iconColor: Colors.blueAccent,
+                    iconSize: 50)
               ],
             )
           ],
