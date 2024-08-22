@@ -193,7 +193,7 @@ class _bodyState extends State<body> {
                     iconSize: 40)
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
